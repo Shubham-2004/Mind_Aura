@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 class ApiService {
   static const String _apiEndpoint =
       'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent';
-  static const String _apiKey = 'AIzaSyCdBrP8GOaGjQgdX1RYOJnHo4xm8D61lmQ';
+  static const String _apiKey = '';
 
   static Future<String?> generateContent(String inputText) async {
     final requestBody = json.encode({
