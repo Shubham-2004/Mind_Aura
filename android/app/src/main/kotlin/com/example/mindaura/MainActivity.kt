@@ -1,0 +1,5 @@
+package com.example.mindaura
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity()
