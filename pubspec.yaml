@@ -42,6 +42,7 @@ dependencies:
   audio_session: ^0.1.23
   flame: ^1.22.0
   youtube_player_flutter: ^9.1.1
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:

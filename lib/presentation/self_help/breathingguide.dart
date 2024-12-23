@@ -82,7 +82,7 @@ class _GuidedBreathingPageState extends State<GuidedBreathingPage> {
       appBar: AppBar(
         backgroundColor: Colors.grey.shade700,
         title: Text(
-          'Meditation Videos',
+          'Breathing Guide Videos',
           style: TextStyle(color: Colors.grey.shade200),
         ),
       ),
@@ -90,7 +90,6 @@ class _GuidedBreathingPageState extends State<GuidedBreathingPage> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // Heading for video selection
             Text(
               'Select a Meditation Video to Watch',
               style: TextStyle(

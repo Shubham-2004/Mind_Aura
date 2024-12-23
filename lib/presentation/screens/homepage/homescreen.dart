@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mindaura/presentation/screens/Consultant_chat_bot.dart';
+import 'package:mindaura/presentation/screens/homepage/your_stories_mine.dart';
 import 'package:mindaura/presentation/screens/self_help.dart';
 import 'package:mindaura/widgets/Consultcard.dart';
 import 'package:mindaura/widgets/FeatureCard.dart';
@@ -101,7 +102,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           imagePath:
                               'https://thumbs.dreamstime.com/z/group-women-friends-illustration-vector-cartoon-relatives-coworkers-like-minded-different-type-female-character-get-together-131454874.jpg'),
                       Featurecard(
-                          Path: () {},
+                          Path: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => YourStoryPage()));
+                          },
                           title: 'Your Stories\n& Mine',
                           subtitle: 'Share ur\nExperience',
                           imagePath:
