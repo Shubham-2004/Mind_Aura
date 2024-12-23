@@ -20,25 +20,12 @@ class _MoreStoriesState extends State<MoreStories> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 70,
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: NetworkImage(
-                "https://healthybodymindsolution.com/wp-content/uploads/2020/07/Meditation.jpg",
-              ),
-              fit: BoxFit.cover,
-            ),
-          ),
-
-          alignment: Alignment.center, // Centers the text
-          child: Text(
-            "More Stories",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
+        title: Text(
+          "More Stories",
+          style: TextStyle(
+            color: Colors.grey.shade600,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
