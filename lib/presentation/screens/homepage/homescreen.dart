@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mindaura/presentation/resource_hub/resource_hub.dart';
 import 'package:mindaura/presentation/screens/Consultant_chat_bot.dart';
 import 'package:mindaura/presentation/screens/homepage/your_stories_mine.dart';
 import 'package:mindaura/presentation/screens/self_help.dart';
@@ -129,7 +130,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 subtitle: 'Self Help Articles and the Resources Center',
                 imagePath:
                     'https://th.bing.com/th/id/OIP.fkLafIJ5dvio0Xyf1DIWrAHaGn?rs=1&pid=ImgDetMain',
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ResourceHubScreen()));
+                },
               ),
               Consultcard(
                   title: 'Personal Consultation',
