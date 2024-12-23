@@ -63,7 +63,6 @@ class MyChatText extends StatelessWidget {
                           child: Container(
                             width: 120,
                             decoration: BoxDecoration(
-                              border: Border.all(color: Colors.teal),
                               borderRadius: BorderRadius.circular(10),
                               image: DecorationImage(
                                 image: FileImage(images[index]),

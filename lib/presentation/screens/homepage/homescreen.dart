@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mindaura/presentation/screens/Consultant_chat_bot.dart';
+import 'package:mindaura/presentation/screens/self_help.dart';
 import 'package:mindaura/widgets/Consultcard.dart';
 import 'package:mindaura/widgets/FeatureCard.dart';
 import 'package:mindaura/widgets/FeelBetterCard.dart';
@@ -46,13 +48,24 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Featurecard(
-                        Path: () {},
+                        Path: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const SelfHelpScreen()));
+                        },
                         title: 'Self Help',
                         subtitle: 'Meditation, \nBreathing Techniques',
                         imagePath:
                             'https://static.vecteezy.com/system/resources/previews/000/450/909/non_2x/man-meditating-in-nature-and-leaves-concept-illustration-for-yoga-meditation-relax-recreation-healthy-lifestyle-vector-illustration-in-flat-cartoon-style.jpg'),
                     Featurecard(
-                        Path: () {},
+                        Path: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const ChatPage()));
+                        },
                         title: 'Therapy Over Text',
                         subtitle: 'asynchronous \nChat Therapy',
                         imagePath:
@@ -69,6 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Colors.white,
                   ])),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -97,16 +111,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               ResourceCard(
-                  title: 'Journal',
-                  subtitle:
-                      'Start Your Growth Journey\nCapture Moments,Reflect on\nThoughts',
-                  imagePath:
-                      'https://as1.ftcdn.net/v2/jpg/03/76/73/66/1000_F_376736673_zv2ko1rYmPjNQJvywBFT2TcP9SCGJsU8.jpg'),
+                title: 'Journal',
+                subtitle:
+                    'Start Your Growth Journey\nCapture Moments,Reflect on\nThoughts',
+                imagePath:
+                    'https://as1.ftcdn.net/v2/jpg/03/76/73/66/1000_F_376736673_zv2ko1rYmPjNQJvywBFT2TcP9SCGJsU8.jpg',
+                onTap: () {},
+              ),
               ResourceCard(
-                  title: 'Resource Hub',
-                  subtitle: 'Self Help Articles and the Resources Center',
-                  imagePath:
-                      'https://th.bing.com/th/id/OIP.fkLafIJ5dvio0Xyf1DIWrAHaGn?rs=1&pid=ImgDetMain'),
+                title: 'Resource Hub',
+                subtitle: 'Self Help Articles and the Resources Center',
+                imagePath:
+                    'https://th.bing.com/th/id/OIP.fkLafIJ5dvio0Xyf1DIWrAHaGn?rs=1&pid=ImgDetMain',
+                onTap: () {},
+              ),
               Consultcard(
                   title: 'Personal Consultation',
                   subtitle:

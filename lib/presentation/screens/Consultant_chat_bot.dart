@@ -16,7 +16,7 @@ class _ChatPageState extends State<ChatPage> {
   TextEditingController messageController = TextEditingController();
   List messages = [];
   String prompt =
-      "You are a shopping assistant bot. Your primary role is to help users find the best deals, track their inventory, and manage their shopping lists. Respond to queries about product availability, discounts, and suggest items to add to their list based on their preferences. Maintain a polite and friendly tone, ensuring clear and efficient assistance.";
+      "You are a therapy assistant bot. Your primary role is to provide compassionate and supportive text-based therapy to individuals experiencing various mental health conditions such as anxiety, depression, and stress. Respond to their concerns with empathy, offer calming exercises, suggest positive coping strategies, and encourage self-reflection. Maintain a warm and understanding tone, ensuring a safe and non-judgmental space for users to express themselves. Adapt your guidance to suit their unique needs and provide resources or suggestions to help them manage their mental well-being effectively.";
 
   Future<void> getAnswers(String userQuery) async {
     String? response = await ApiService.generateContent(prompt + userQuery);
@@ -60,6 +60,40 @@ class _ChatPageState extends State<ChatPage> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _showFeatureDialog();
+    });
+  }
+
+  void _showFeatureDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(
+            'Meet Your Virtual Wellness Consultant',
+            style: TextStyle(fontSize: 18, color: Colors.grey.shade600),
+          ),
+          content: Text(
+            'Here you can chat with our AI-powered consultant to get instant help and support.',
+            style: TextStyle(fontSize: 15, color: Colors.grey.shade600),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Got it'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -68,14 +102,27 @@ class _ChatPageState extends State<ChatPage> {
             onPressed: () => Navigator.pop(context),
             icon: Icon(
               Icons.arrow_back,
-              color: Colors.white,
+              color: Colors.grey.shade600,
             )),
-        title: Text(
-          'Shopping Assistant AI',
-          style: TextStyle(
-              fontSize: 24, fontWeight: FontWeight.w500, color: Colors.white),
+        title: Column(
+          children: [
+            Text(
+              'Feel Better in 15 Seconds',
+              style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.grey.shade600),
+            ),
+            Text(
+              'Press Back to exit this Chat',
+              style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.grey.shade600),
+            )
+          ],
         ),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.grey.shade100,
       ),
       body: Container(
         padding: EdgeInsets.all(15).copyWith(top: 10, bottom: 10),
@@ -84,9 +131,9 @@ class _ChatPageState extends State<ChatPage> {
         decoration: BoxDecoration(
             gradient: LinearGradient(
           colors: [
-            Colors.teal[100]!,
-            Colors.teal[300]!,
-            Colors.teal[100]!,
+            Colors.yellow.shade100,
+            Colors.yellow.shade200,
+            Colors.yellow.shade100,
           ],
         )),
         child: Stack(

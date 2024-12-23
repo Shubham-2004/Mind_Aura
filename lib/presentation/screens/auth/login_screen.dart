@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mindaura/presentation/screens/auth/signup_screen.dart';
-import 'package:mindaura/presentation/screens/homepage/homescreen.dart';
 import 'package:mindaura/presentation/screens/homescreen_contains.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
