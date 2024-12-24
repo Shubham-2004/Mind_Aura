@@ -17,7 +17,6 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
   // List of pages to navigate to
   final List<Widget> _pages = [
     const HomeScreen(),
-    const CommunityScreen(),
     const ToolsScreen(),
     const Gamescreen(),
   ];
@@ -42,11 +41,11 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.people),
-            label: 'Community',
-          ),
+           ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.people),
+          //   label: 'Community',
+          // ),
           BottomNavigationBarItem(
             icon: Icon(Icons.dashboard),
             label: 'Tools',

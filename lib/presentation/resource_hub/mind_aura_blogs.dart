@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:mindaura/model/quotes_model.dart';
+import 'package:mindaura/models/quotes_model.dart';
 
 // Main Widget
 class MindAuraBlogs extends StatefulWidget {

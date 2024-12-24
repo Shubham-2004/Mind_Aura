@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:mindaura/models/goal_entry.dart';
+import 'package:mindaura/models/mood_entry.dart';
 import 'package:mindaura/presentation/screens/homepage/homescreen.dart';
 import 'package:mindaura/presentation/screens/homescreen_contains.dart';
 import 'package:mindaura/presentation/screens/splash_screen.dart';
+import 'package:mindaura/presentation/tools/goal_tracker.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:mindaura/models/journal_entry.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
-  // Initialize Supabase
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(JournalEntryAdapter());
+  await Hive.openBox<JournalEntry>('journal_entries');
+  Hive.registerAdapter(MoodEntryAdapter());
+  await Hive.openBox<MoodEntry>('mood_entries');
+  Hive.registerAdapter(GoalEntryAdapter());
+  await Hive.openBox<GoalEntry>('goal_entries');
+
   await Supabase.initialize(
     url: 'https://cqikrjbfvpshqmghjaiu.supabase.co',
     anonKey:
@@ -23,7 +36,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow.shade400),
         useMaterial3: true,
       ),
-      home: HomeScreenContent(),
+      home: SplashScreen(),
     );
   }
 }

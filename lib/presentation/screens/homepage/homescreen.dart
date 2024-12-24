@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mindaura/presentation/journal/new_journal.dart';
 import 'package:mindaura/presentation/resource_hub/resource_hub.dart';
 import 'package:mindaura/presentation/screens/Consultant_chat_bot.dart';
 import 'package:mindaura/presentation/screens/homepage/your_stories_mine.dart';
@@ -123,7 +124,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     'Start Your Growth Journey\nCapture Moments,Reflect on\nThoughts',
                 imagePath:
                     'https://as1.ftcdn.net/v2/jpg/03/76/73/66/1000_F_376736673_zv2ko1rYmPjNQJvywBFT2TcP9SCGJsU8.jpg',
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => JournalPage()));
+                },
               ),
               ResourceCard(
                 title: 'Resource Hub',
