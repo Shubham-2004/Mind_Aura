@@ -168,8 +168,11 @@ class _JournalPageState extends State<JournalPage> {
             ),
             const SizedBox(height: 16.0),
             Text(
-              'Your Journals:',
-              style: Theme.of(context).textTheme.headlineSmall,
+              'Your Journals :-',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
             ),
             const SizedBox(height: 8.0),
             ..._journalBox.values.map((entry) {

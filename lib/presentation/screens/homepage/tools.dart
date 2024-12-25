@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mindaura/presentation/tools/anxiety_tracker.dart';
 import 'package:mindaura/presentation/tools/goal_tracker.dart';
 import 'package:mindaura/presentation/tools/mood_tracker.dart';
 import 'package:mindaura/widgets/resourcecard.dart';
@@ -45,7 +46,12 @@ class ToolsScreen extends StatelessWidget {
                 imagePath:
                     'https://static.vecteezy.com/system/resources/previews/000/963/040/original/cartoon-boy-tracking-goals-vector.jpg'),
             ResourceCard(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => FaceDetectionScreen()));
+                },
                 title: 'Anxiety Tracker',
                 subtitle: 'Track your Anxiety',
                 imagePath:
